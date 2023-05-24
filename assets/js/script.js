@@ -16,10 +16,13 @@ let answers = [
 ];
 
 let score = 0;
-
+let prevQuestionIndex = -1;
 function getRandomQuestion() {
     let index = Math.floor(Math.random() * questions.length);
-
+    while (index === prevQuestionIndex) {
+        index = Math.floor(Math.random() * questions.length);
+    }
+    prevQuestionIndex = index;
     return questions[index];
 }
 
@@ -44,13 +47,15 @@ const inputElement = document.getElementById('input');
 const scoreElement = document.getElementById('score');
 
 function checkAnswer() {
-    let userAnswer = inputElement.value;
-    let correctAnswer = answers[questions.indexOf(question)];
-    if (userAnswer === correctAnswer) {
+    let userAnswer = inputElement.value.toLowerCase();
+    let correctAnswer = answers[questions.indexOf(question)].toLowerCase();
+    if (userAnswer.includes(correctAnswer)) {
         score++;
         alert("Correct!");
     } else {
-        score--;
+        if (score > 0) {
+            score--;
+        }
         alert("Wrong!");
     }
     questionArea();
@@ -59,7 +64,4 @@ function checkAnswer() {
 }
 submitButton.addEventListener("click", checkAnswer);
 
-function updateGameArea() {
-    scoreText.text = "SCORE: " + score;
-    scoreText.update();
-}
+
