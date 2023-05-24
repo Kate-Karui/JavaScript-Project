@@ -1,8 +1,8 @@
 let questions = [
-    "Who is the main antagonist of The Legend Of Zelda series?",
+    "Who is the main antagonist in The Legend Of Zelda series?",
     "Who's the last character to be added in Super Smash Brothers Ultimate?",
-    "Where are you from?",
-    "What is your favorite color?",
+    "What is the game engine made for Half Life 2 called?",
+    "What's the highest grossing game?",
     "What are your hobbies?"
 ];
 
@@ -10,8 +10,8 @@ let questions = [
 let answers = [
     "Ganon",
     "Sora",
-    "Your country name",
-    "Your color name",
+    "Source",
+    "Minecraft",
     "Your hobbies"
 ];
 
@@ -31,14 +31,11 @@ function questionArea() {
     question = getRandomQuestion();
 
     document.getElementsByTagName('h1')[0].innerHTML = question;
-    console.log('Test!');
-
 }
 
 
 
 questionArea();
-
 
 const quizContainer = document.getElementById('questionarea');
 const resultsContainer = document.getElementById('scorearea');
@@ -56,12 +53,20 @@ function checkAnswer() {
         if (score > 0) {
             score--;
         }
-        alert("Wrong!");
+        let capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
+        alert("Wrong! The correct answer is " + capitalizedAnswer);
     }
     questionArea();
     inputElement.value = "";
     scoreElement.innerHTML = score;
+
 }
+
+inputElement.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+});
 submitButton.addEventListener("click", checkAnswer);
 
 
