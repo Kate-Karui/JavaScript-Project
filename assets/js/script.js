@@ -16,7 +16,7 @@ let questions = [
 	"What video game series features a character named Claptrap, a sarcastic robot that assists the player?",
 	"What is the name of the main character in the God of War series?",
 	"What is the name of the gaming platform that allows players to create and play games made by other users?",
-	"What is the name of the main character in the “Uncharted” series?",
+	"What is the name of the main character in the Uncharted series?",
 	"What is the name of the gaming platform that allows players to buy and play games on PC and Mac?",
 	"What is the name of the game developer that created the Fallout, The Elder Scrolls, and Starfield series?",
 	"What is Pearl’s signature color in Splatoon 2?",
