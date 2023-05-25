@@ -3,7 +3,7 @@ let questions = [
     "Who's the last character to be added in Super Smash Brothers Ultimate?",
     "What is the game engine made for Half Life 2 called?",
     "What's the highest grossing game?",
-    "What are your hobbies?"
+    "What's Mario's first apperance?"
 ];
 
 
@@ -12,7 +12,7 @@ let answers = [
     "Sora",
     "Source",
     "Minecraft",
-    "Your hobbies"
+    "Donkey Kong"
 ];
 
 let score = 0;
