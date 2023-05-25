@@ -42,6 +42,8 @@ img {
 header {
  	font-size: 27%;
     text-align: center;
+	 height: 50%;
+	background-color: white;
 }
 
 #footer {
