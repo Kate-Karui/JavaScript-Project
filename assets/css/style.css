@@ -1,7 +1,7 @@
 #questionarea {
     text-align: center;
     font-size: 250%;
-    padding: 500px 0 0 0;
+    padding: 10vh 0 0 0;
 }
 
 #inputarea {
@@ -12,9 +12,41 @@
     font-size: 200%;
 }
 
+#submit:hover{
+	font-size: 250%
+}
+
 #score {
     text-align: center;
     font-size: 200%;
     font-weight: bold;
-    padding-top: 5%;
+	padding: none
+}
+
+#scoretext{
+	font-size: 200%;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+    position: relative;
+    left: 45%;
+    top: 94px;
+
+}
+
+#footer {
+	text-align: center;
+	background-color: black;
+	color: white;
+}	
+
+body {
+	display: grid;
+    min-height: 100vh;
+    margin: 0;
+    align-items: end;
+}
+
+label {
+	display: none
 }
