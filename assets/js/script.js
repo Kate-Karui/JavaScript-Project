@@ -136,12 +136,16 @@ function checkAnswer() {
     if (userAnswer.includes(correctAnswer)) {
  showImage("assets/images/check.jpg", "Checkmark");
 		score++;
+		answers.splice(questions.indexOf(question), 1);
+		questions.splice(questions.indexOf(question), 1);
         alert("Correct!");
     } else {
         if (score > 0) {
             score--;
         }
 		showImage("assets/images/cross.jpg", "Cross mark");
+		answers.splice(questions.indexOf(question), 1);
+		questions.splice(questions.indexOf(question), 1);
         let capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
         alert("Wrong! The correct answer is " + capitalizedAnswer);
     }
