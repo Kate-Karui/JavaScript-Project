@@ -64,3 +64,27 @@ label {
 	opacity: 0;
     display: inherit;
 }
+
+@media screen and (max-width: 1440px) {
+	#score{
+		padding-right: 46%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	#score{
+		padding-right: 43%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#score{
+		padding-right: 40%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	#score{
+		padding-right: 25%;
+	}
+}
