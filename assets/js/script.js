@@ -28,6 +28,8 @@ function getRandomQuestion() {
     return questions[index];
 }
 
+
+
 function questionArea() {
 
     question = getRandomQuestion();
@@ -44,12 +46,21 @@ function showImage(imageSrc, altText) {
 }
 
 questionArea();
-
-const quizContainer = document.getElementById('questionarea');
-const resultsContainer = document.getElementById('scorearea');
 const submitButton = document.getElementById('submit');
 const inputElement = document.getElementById('input');
 const scoreElement = document.getElementById('score');
+
+function checkGameStatus() {
+  if (score == 10) {
+    alert("You win!");
+    location.reload();
+  }
+  if (score == 0) {
+    alert("You lose!");
+    location.reload();
+  }
+}
+
 
 function checkAnswer() {
     let userAnswer = inputElement.value.toLowerCase();
@@ -69,6 +80,7 @@ function checkAnswer() {
     questionArea();
     inputElement.value = "";
     scoreElement.innerHTML = score;
+  checkGameStatus();
 
 }
 

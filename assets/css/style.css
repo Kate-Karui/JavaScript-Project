@@ -20,17 +20,17 @@
     text-align: center;
     font-size: 190%;
     font-weight: bold;
-	padding: none
+    float: right;
+    padding-right: 48%;
+    padding-top: 7px;
 }
 
 #scoretext{
 	font-size: 200%;
-	font-weight: bold;
-	text-align: center;
-	display: inline-block;
-    position: relative;
-    left: 45%;
-    top: 94px;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    padding-left: 45%;
 
 }
 
