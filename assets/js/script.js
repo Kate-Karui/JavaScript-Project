@@ -85,6 +85,7 @@ let answers = [
 	
 ];
 
+
 let score = 0;
 let prevQuestionIndex = -1;
 function getRandomQuestion() {
@@ -164,3 +165,4 @@ inputElement.addEventListener("keydown", function (event) {
 submitButton.addEventListener("click", checkAnswer);
 
 
+inputElement.focus();
