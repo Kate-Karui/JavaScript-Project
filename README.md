@@ -52,6 +52,9 @@ Video Game Quiz is a game completely made in Javascript.
 
 - I've checked that the site looks okay on different screen sizes. 
 
+- I've made sure it scored high in lighthouse
+![lighthouse](assets/images/light.png)
+
 ## Bugs 
 
 - The score counter awkwardly slides underneath the score text on other screen sizes.
