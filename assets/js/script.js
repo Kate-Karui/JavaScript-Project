@@ -3,7 +3,8 @@ let questions = [
     "Who's the last character to be added in Super Smash Brothers Ultimate?",
     "What is the game engine made for Half Life 2 called?",
     "What's the highest grossing game?",
-    "What's Mario's first apperance?"
+    "What's Mario's first apperance?",
+	"Nintendo began as a company selling which products?",
 ];
 
 
@@ -12,7 +13,8 @@ let answers = [
     "Sora",
     "Source",
     "Minecraft",
-    "Donkey Kong"
+    "Donkey Kong",
+	"Playing Cards"
 ];
 
 let score = 0;
@@ -33,7 +35,13 @@ function questionArea() {
     document.getElementsByTagName('h1')[0].innerHTML = question;
 }
 
-
+function showImage(imageSrc, altText) {
+	var img = document.createElement("img");
+	img.src = imageSrc;
+	img.alt = altText;
+	var src = document.getElementById("header");
+    src.appendChild(img);
+}
 
 questionArea();
 
@@ -47,12 +55,14 @@ function checkAnswer() {
     let userAnswer = inputElement.value.toLowerCase();
     let correctAnswer = answers[questions.indexOf(question)].toLowerCase();
     if (userAnswer.includes(correctAnswer)) {
-        score++;
+ showImage("assets/images/check.jpg", "Checkmark");
+		score++;
         alert("Correct!");
     } else {
         if (score > 0) {
             score--;
         }
+		showImage("assets/images/cross.jpg", "Cross mark");
         let capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
         alert("Wrong! The correct answer is " + capitalizedAnswer);
     }

@@ -18,7 +18,7 @@
 
 #score {
     text-align: center;
-    font-size: 200%;
+    font-size: 190%;
     font-weight: bold;
 	padding: none
 }
@@ -32,6 +32,16 @@
     left: 45%;
     top: 94px;
 
+}
+
+img {
+	width: 4%;
+    margin: 0 auto;
+}
+
+header {
+ 	font-size: 27%;
+    text-align: center;
 }
 
 #footer {
