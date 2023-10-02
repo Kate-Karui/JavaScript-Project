@@ -1,48 +1,51 @@
 #questionarea {
-    text-align: center;
-    font-size: 250%;
-    padding: 10vh 0 0 0;
+	text-align: center;
+	font-size: 250%;
+	padding: 10vh 0 0 0;
 }
 
 #inputarea {
-    text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
 }
 
 #inputarea>input {
-    font-size: 200%;
+	font-size: 200%;
+	font-weight: bold;
 }
 
-#submit:hover{
-	font-size: 250%
+#choice2 {
+	margin: 0% 5%;
 }
 
 #score {
-    text-align: center;
-    font-size: 190%;
-    font-weight: bold;
-    float: right;
-    padding-right: 49%;
-    padding-top: 7px;
+	text-align: center;
+	font-size: 190%;
+	font-weight: bold;
+	float: right;
+	padding-right: 49%;
+	padding-top: 7px;
 }
 
-#scoretext{
+#scoretext {
 	font-size: 200%;
-    font-weight: bold;
-    text-align: center;
-    float: left;
-    padding-left: 45%;
-
+	font-weight: bold;
+	text-align: center;
+	float: left;
+	padding-left: 45%;
 }
 
 img {
 	width: 4%;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 header {
- 	font-size: 27%;
-    text-align: center;
-	 height: 50%;
+	font-size: 27%;
+	text-align: center;
+	height: 50%;
 	background-color: white;
 }
 
@@ -50,41 +53,41 @@ header {
 	text-align: center;
 	background-color: black;
 	color: white;
-}	
+}
 
 body {
 	display: grid;
-    min-height: 100vh;
-    margin: 0;
-    align-items: end;
+	min-height: 100vh;
+	margin: 0;
+	align-items: end;
 	background-color: lightblue;
 }
 
 label {
 	opacity: 0;
-    display: inherit;
+	display: inherit;
 }
 
 @media screen and (max-width: 1440px) {
-	#score{
+	#score {
 		padding-right: 46%;
 	}
 }
 
 @media screen and (max-width: 1024px) {
-	#score{
+	#score {
 		padding-right: 43%;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	#score{
+	#score {
 		padding-right: 40%;
 	}
 }
 
 @media screen and (max-width: 425px) {
-	#score{
+	#score {
 		padding-right: 25%;
 	}
 }
