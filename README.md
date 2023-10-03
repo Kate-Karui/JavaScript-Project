@@ -75,14 +75,12 @@ An extra page that will help you understand the game better. It will tell you ho
 
  ![Jshint validation without any errors](assets/images/scriptcheck.png)
 
-- The following metrics were returned:
-  - There are 6 functions in this file.
+The following metrics were returned:
 
-  - Function with the largest signature take 2 arguments, while the median is 0.
-
-    - Largest function has 19 statements in it, while the median is 5.
-
-    - The most complex function has a cyclomatic complexity value of 3 while the median is 2.
+- There are 11 functions in this file.
+- Function with the largest signature take 2 arguments, while the median is 0.
+- Largest function has 21 statements in it, while the median is 3.
+- The most complex function has a cyclomatic complexity value of 7 while the median is 1.
 
 ### Unfixed Bugs
 
