@@ -60,9 +60,6 @@ h1 {
 }
 
 #welcome {
-	position: fixed;
-	top: 40%;
-	left: 0;
 	width: 100%;
 	padding: 10px;
 	text-align: center;
@@ -118,11 +115,42 @@ label {
 	#score {
 		padding-right: 46%;
 	}
+
+	#help {
+		left: 95%;
+	}
+
+	#back {
+		right: 95%;
+	}
+
+	img {
+		width: 8%;
+	}
 }
 
 @media screen and (max-width: 1024px) {
 	#score {
 		padding-right: 43%;
+
+	}
+
+	#help {
+		left: 90%;
+	}
+
+	#back {
+		right: 90%;
+	}
+
+	img {
+		width: 10%;
+	}
+
+	#footer {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
 	}
 }
 
@@ -130,10 +158,44 @@ label {
 	#score {
 		padding-right: 40%;
 	}
+
+	img {
+		width: 12%;
+	}
+
+	#inputarea {
+		padding-left: 7%;
+		margin-top: 20px;
+		display: block;
+	}
 }
 
 @media screen and (max-width: 425px) {
 	#score {
 		padding-right: 25%;
+	}
+
+	#help {
+		left: 85%;
+	}
+
+	#back {
+		right: 85%;
+	}
+
+	#footer {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+	}
+
+	img {
+		width: 17%;
+	}
+
+	#inputarea {
+		padding-left: 24%;
+		margin-top: 20px;
+		display: block;
 	}
 }
