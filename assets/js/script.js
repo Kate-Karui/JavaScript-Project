@@ -1,6 +1,4 @@
-/**
- * Question array matching the answers array
- */
+
 const questions = [
 	"Who is the main antagonist in The Legend Of Zelda series?",
 	"Who's the last character to be added in Super Smash Brothers Ultimate?",
@@ -90,10 +88,7 @@ let prevQuestionIndex = -1;
 let remainingQuestions = questions.slice();
 let wrongGuesses = 0;
 let AllowInput = true;
-/**
- * Goes through the questions array and returns a random question
- * @returns {string} A random question from the questions array
- */
+
 function getRandomQuestion() {
 	if (remainingQuestions.length === 0) {
 		remainingQuestions = questions.slice();
@@ -103,21 +98,15 @@ function getRandomQuestion() {
 	remainingQuestions.splice(index, 1);
 	return question;
 }
-/**
- * Shuffles the contents of the answers array
- * @param {string} array 
- */
+
 function shuffle(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
-/**
- * Displays a question and its answers
- */
+
 function questionArea() {
-	// New Questions! Allow input again.
 	AllowInput = true;
 
 	let question = getRandomQuestion();
@@ -129,9 +118,7 @@ function questionArea() {
 	document.getElementById('choice2').value = splitAnswers[1];
 	document.getElementById('choice3').value = splitAnswers[2];
 }
-/**
- * Checks if the game is over
- */
+
 function checkGameStatus() {
 	if (score == 10) {
 		alert("You win!");
@@ -141,13 +128,7 @@ function checkGameStatus() {
 		alert("You lose!");
 		location.reload();
 	}
-}
-/**
- *  Checks if the answer is correct or not
- * @param {string} selectedChoice 
- */
-function checkAnswer(selectedChoice) {
-	// Check if this is true, otherwise don't do anything.
+
 	if (AllowInput) {
 		let userAnswer = selectedChoice.value.toLowerCase();
 		let correctAnswer = answers[questions.indexOf(document.getElementsByTagName('h1')[0].innerHTML)].toLowerCase().split(',')[0];
@@ -165,16 +146,10 @@ function checkAnswer(selectedChoice) {
 		checkGameStatus();
 		document.getElementById("score").innerHTML = "Score: " + score;
 
-		// Since we pressed it, disable input.
 		AllowInput = false;
 		setTimeout(questionArea, 1000);
 	}
 }
-/**
- * Displays an image depending on if the answer is correct or not
- * @param {string} imageSrc 
- * @param {string} altText 
- */
 function showImage(imageSrc, altText) {
 	var img = document.createElement("img");
 	img.src = "assets/images/" + imageSrc;

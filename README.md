@@ -41,7 +41,9 @@ The score area displays your current score, as well as the total number of quest
 
 - __Footer__
 The footer displays the creator's name and a link to their website. The footer is designed to be unobtrusive and informative, providing you with additional information about the game's creator if you're interested in learning more.
+
 ---
+
 - __Help Site__
 An extra page that will help you understand the game better. It will tell you how to play the game and what the game is about. It will also tell you how to win and lose the game. 
 ![help](assets/images/help.png)
