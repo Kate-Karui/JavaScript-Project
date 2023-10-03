@@ -1,4 +1,6 @@
-
+/**
+ * Question array matching the answers array
+ */
 const questions = [
 	"Who is the main antagonist in The Legend Of Zelda series?",
 	"Who's the last character to be added in Super Smash Brothers Ultimate?",
@@ -107,6 +109,7 @@ function shuffle(array) {
 }
 
 function questionArea() {
+
 	AllowInput = true;
 
 	let question = getRandomQuestion();
@@ -118,7 +121,6 @@ function questionArea() {
 	document.getElementById('choice2').value = splitAnswers[1];
 	document.getElementById('choice3').value = splitAnswers[2];
 }
-
 function checkGameStatus() {
 	if (score == 10) {
 		alert("You win!");
@@ -128,6 +130,8 @@ function checkGameStatus() {
 		alert("You lose!");
 		location.reload();
 	}
+}
+function checkAnswer(selectedChoice) {
 
 	if (AllowInput) {
 		let userAnswer = selectedChoice.value.toLowerCase();
@@ -145,6 +149,7 @@ function checkGameStatus() {
 		}
 		checkGameStatus();
 		document.getElementById("score").innerHTML = "Score: " + score;
+
 
 		AllowInput = false;
 		setTimeout(questionArea, 1000);
