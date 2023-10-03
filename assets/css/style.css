@@ -20,6 +20,28 @@
 	margin: 0% 5%;
 }
 
+#rules {
+	font-weight: bold;
+	text-align: center;
+	font-size: 200%;
+}
+
+#help {
+	position: fixed;
+	top: -1%;
+	text-align: right;
+	left: 97%;
+}
+
+#help>a>p {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+h1 {
+	font-weight: bold;
+}
+
 #score {
 	text-align: center;
 	font-size: 190%;
@@ -27,6 +49,30 @@
 	float: right;
 	padding-right: 49%;
 	padding-top: 7px;
+}
+
+#back {
+	position: fixed;
+	top: -2%;
+	text-align: right;
+	right: 96%;
+	font-size: 200%;
+}
+
+#welcome {
+	position: fixed;
+	top: 40%;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	font-size: 200%;
+}
+
+#helpline {
+	top: -45%;
+	width: 100%;
+	position: fixed;
 }
 
 #scoretext {

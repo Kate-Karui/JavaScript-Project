@@ -88,7 +88,12 @@ const answers = [
 let score = 0;
 let prevQuestionIndex = -1;
 let remainingQuestions = questions.slice();
-
+let wrongGuesses = 0;
+let AllowInput = true;
+/**
+ * Goes through the questions array and returns a random question
+ * @returns {string} A random question from the questions array
+ */
 function getRandomQuestion() {
 	if (remainingQuestions.length === 0) {
 		remainingQuestions = questions.slice();
@@ -108,8 +113,13 @@ function shuffle(array) {
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
-
+/**
+ * Displays a question and its answers
+ */
 function questionArea() {
+	// New Questions! Allow input again.
+	AllowInput = true;
+
 	let question = getRandomQuestion();
 	document.getElementsByTagName('h1')[0].innerHTML = question;
 	let splitAnswers = answers[questions.indexOf(question)].split(',');
@@ -119,39 +129,52 @@ function questionArea() {
 	document.getElementById('choice2').value = splitAnswers[1];
 	document.getElementById('choice3').value = splitAnswers[2];
 }
-
+/**
+ * Checks if the game is over
+ */
 function checkGameStatus() {
 	if (score == 10) {
 		alert("You win!");
 		location.reload();
 	}
-	if (score == 0) {
+	if (wrongGuesses == 20 || score == 0) {
 		alert("You lose!");
 		location.reload();
 	}
 }
 /**
- * Checks if the user's answer is correct or not
+ *  Checks if the answer is correct or not
  * @param {string} selectedChoice 
  */
 function checkAnswer(selectedChoice) {
-	let userAnswer = selectedChoice.value.toLowerCase();
-	let correctAnswer = answers[questions.indexOf(document.getElementsByTagName('h1')[0].innerHTML)].toLowerCase().split(',')[0];
-	if (userAnswer === correctAnswer) {
-		score++;
-		showImage("check.jpg", "Correct!");
-	} else {
-		if (score > 0) {
-			score--;
+	// Check if this is true, otherwise don't do anything.
+	if (AllowInput) {
+		let userAnswer = selectedChoice.value.toLowerCase();
+		let correctAnswer = answers[questions.indexOf(document.getElementsByTagName('h1')[0].innerHTML)].toLowerCase().split(',')[0];
+		let isCorrect = userAnswer === correctAnswer;
+		if (isCorrect) {
+			score++;
+			showImage("check.jpg", "Correct!");
+		} else {
+			wrongGuesses++;
+			if (score > 0) {
+				score--;
+			}
+			showImage("cross.jpg", "Wrong!");
 		}
-		showImage("cross.jpg", "Wrong!");
+		checkGameStatus();
+		document.getElementById("score").innerHTML = "Score: " + score;
+
+		// Since we pressed it, disable input.
+		AllowInput = false;
+		setTimeout(questionArea, 1000);
 	}
-	checkGameStatus();
-	document.getElementById("score").innerHTML = "Score: " + score;
-	setTimeout(questionArea, 1000);
 }
-
-
+/**
+ * Displays an image depending on if the answer is correct or not
+ * @param {string} imageSrc 
+ * @param {string} altText 
+ */
 function showImage(imageSrc, altText) {
 	var img = document.createElement("img");
 	img.src = "assets/images/" + imageSrc;
@@ -166,78 +189,33 @@ function showImage(imageSrc, altText) {
 }
 
 questionArea();
-const choice1 = document.getElementById('choice1');
-const choice2 = document.getElementById('choice2');
-const choice3 = document.getElementById('choice3');
-const scoreElement = document.getElementById('score');
-
-choice1.addEventListener('click', function () {
-	checkAnswer(choice1);
+const choices = [choice1, choice2, choice3];
+choices.forEach((choice) => {
+	choice.addEventListener('click', () => {
+		checkAnswer(choice);
+	});
+});
+document.getElementById('choice0').addEventListener('click', () => {
+	checkAnswer(choices[Math.floor(Math.random() * 3)]);
 });
 
-choice2.addEventListener('click', function () {
-	checkAnswer(choice2);
-});
-
-choice3.addEventListener('click', function () {
-	checkAnswer(choice3);
-});
-
-document.getElementById('choice0').addEventListener('click', function () {
-	checkAnswer(document.getElementById(`choice${Math.floor(Math.random() * 3) + 1}`));
-});
-
-document.getElementById('submit').addEventListener('click', function () {
+document.getElementById('submit').addEventListener('click', () => {
 	let userAnswer = document.getElementById('input').value.toLowerCase();
 	let correctAnswer = answers[questions.indexOf(document.getElementsByTagName('h1')[0].innerHTML)].toLowerCase().split(',')[0];
-	if (userAnswer === correctAnswer) {
+	let isCorrect = userAnswer === correctAnswer;
+	if (isCorrect) {
 		score++;
 		showImage("check.jpg", "Correct!");
-		setTimeout(function () {
-			choice1.addEventListener('click', function () {
-				checkAnswer(choice1);
-			});
-
-			choice2.addEventListener('click', function () {
-				checkAnswer(choice2);
-			});
-
-			choice3.addEventListener('click', function () {
-				checkAnswer(choice3);
-			});
-
-			document.getElementById('choice0').addEventListener('click', function () {
-				checkAnswer(document.getElementById(`choice${Math.floor(Math.random() * 3) + 1}`));
-			});
-		}, 1000);
 	} else {
+		wrongGuesses++;
 		if (score > 0) {
 			score--;
 		}
 		showImage("cross.jpg", "Wrong!");
-		setTimeout(function () {
-			checkGameStatus();
-			questionArea();
-			choice1.addEventListener('click', function () {
-				checkAnswer(choice1);
-			});
-
-			choice2.addEventListener('click', function () {
-				checkAnswer(choice2);
-			});
-
-			choice3.addEventListener('click', function () {
-				checkAnswer(choice3);
-			});
-
-			document.getElementById('choice0').addEventListener('click', function () {
-				checkAnswer(document.getElementById(`choice${Math.floor(Math.random() * 3) + 1}`));
-			});
-		}, 1000);
 	}
+	checkGameStatus();
 	document.getElementById("score").innerHTML = "Score: " + score;
+	setTimeout(questionArea, 1000);
 });
 
 document.getElementById("score").innerHTML = "Score: " + score;
-
-
