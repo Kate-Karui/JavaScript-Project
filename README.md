@@ -105,13 +105,15 @@ The live link can be found [here.](https://kate-karui.github.io/Video-Game-Quiz/
 
 - ### Content
 
-  - Javascript guidance taken from Bing AI.
+  - Javascript guidance taken from Bing AI and Github Copilot.
 
 - ### Media
 
   - Checkmark taken from [clipartbest.com](http://www.clipartbest.com/clipart-dT85e6aqc)
   - Cross mark taken from [clker.com](https://clipartcraft.com/download.html)
   - Controller favicon taken from [gamingcypher](https://gamingcypher.com/xbox-one-the-new-generation-xbox-controller-detailed/)
+  - Wireframe made with [Balsamiq](https://balsamiq.com/)
+  - Multi device size mockup made with [ui.dev](https://ui.dev/amiresponsive)
 
 ## Conclusion
 
